@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %}
+<div class="container" style="text-align: center; margin-top: 10vh;">
+  <h2 style="text-decoration:underline;">Create Your Blog</h2>
+  <div style="width: 400px; margin-left: 32%; margin-top: 5vh; height: 50vh">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingText"
+          name="title"
+          placeholder="Blog Title"
+          required
+        />
+        <label for="floatingText">Blog Title</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="slug"
+          class="form-control"
+          id="floatingSlug"
+          name="slug"
+          placeholder="Slug Tite value"
+          required
+        />
+        <label for="floatingSlug">Title Slug</label>
+      </div>
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Leave a blog Content here"
+          name="desc"
+          id="floatingTextarea2"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea2"> Blog Content </label>
+      </div>
+      <div class="d-grid mt-4">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          name="submit"
+          value="Create Blog Now"
+        >
+          Create Blog
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

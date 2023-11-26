@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up | Blog Website</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+    />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 17px;
+        background-color: #fdfdfd;
+      }
+      .shadow {
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+      }
+      .btn-danger {
+        color: #fff;
+        background-color: #f00000;
+        border-color: #dc281e;
+      }
+      .masthead {
+        background: #3398e1;
+        height: auto;
+        padding-bottom: 15px;
+        box-shadow: 0 16px 48px #e3e7eb;
+        padding-top: 10px;
+      }
+    </style>
+
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light shadow"
+      id="mainNav"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">G Blogs</a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item text-black">
+              <a
+                class="nav-link text-black font-weight-bold"
+                href="{% url 'signin' %}"
+                >Sign In</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="text-align: center; margin-top: 10vh">
+      <h2>Sign Up</h2>
+      <div
+        style="width: 400px; margin-left: 32%; margin-top: 10vh; height: 50vh"
+      >
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingText"
+              name="uname"
+              placeholder="Full Name"
+              required
+            />
+            <label for="floatingText">Full Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              name="uemail"
+              placeholder="name@example.com"
+              required
+            />
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-4">
+            <input
+              type="password"
+              class="form-control"
+              name="upassword"
+              id="floatingPassword"
+              placeholder="Password"
+              required
+            />
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit" name="submit">
+              Sign Up
+            </button>
+            <p style="text-align: center">
+              Already a Member? <a href="{% url 'signin' %}">Sign In</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="py-3 bg-grey mt-3">
+      <p class="m-0 text-dark text-center">Copyright &copy; G Blogs</p>
+    </footer>
+  </body>
+</html>
